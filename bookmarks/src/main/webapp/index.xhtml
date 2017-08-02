@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+
+    You may not modify, use, reproduce, or distribute this software except in
+    compliance with the terms of the License at:
+    http://java.net/projects/javaeetutorial/pages/BerkeleyLicense
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Bookmarkable URL Example</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:graphicImage url="#{resource['images:duke.waving.gif']}"
+                            alt="Duke waving his hand"/>
+            <h2>Coffee Order</h2>
+            <h4>Please fill out the fields below to configure your order!</h4>
+            <b>Name: </b>
+            <h:inputText id="username"
+                         title="My name is: "
+                         value="#{hello.name}"
+                         required="true"
+                         requiredMessage="Error: A name is required."
+                         maxlength="25" />
+            <p></p>
+            <b>Toppings: </b>
+            <p>Whipped Cream -
+                <h:selectBooleanCheckbox value="#{hello.whippedCream}"
+                                         title="Whipped Cream"
+                                         id="whippedCream" />
+            </p>
+            <p>Chocolate -
+                <h:selectBooleanCheckbox value="#{hello.chocolate}"
+                                         title="Chocolate"
+                                         id="chocolate" />
+            </p>
+            <p></p>
+            <b>Type: </b>
+            <p>
+                <h:selectOneRadio value = "#{hello.temp}"
+                                  required="true"
+                                  requiredMessage="Error: A Type is required.">
+                    <f:selectItem itemValue = "Iced" itemLabel = "Iced" />
+                    <f:selectItem itemValue = "Hot" itemLabel = "Hot(Regular)" />
+                </h:selectOneRadio>
+            </p>
+            <p></p>
+            <b>Roast: </b>
+            <p>
+                <h:selectOneListbox value = "#{hello.roast}"
+                                    required="true"
+                                    requiredMessage="Error: A Roast is required.">
+                    <f:selectItem itemValue = "Light" itemLabel = "Light Roast" />
+                    <f:selectItem itemValue = "Medium" itemLabel = "Medium Roast" />
+                    <f:selectItem itemValue = "Medium Dark" itemLabel = "Medium Dark Roast" />
+                    <f:selectItem itemValue = "Dark" itemLabel = "Dark Roast" />
+                </h:selectOneListbox>
+            </p>
+            <h:commandButton id="submit" value="Submit" action="response" />
+            <h:commandButton id="reset" value="Reset" type="reset" />
+        </h:form>
+        <div class="messagecolor">
+            <h:messages showSummary="true" 
+                        showDetail="false"
+                        errorStyle="color: #d20005" 
+                        infoStyle="color: blue"/>
+        </div>
+    </h:body>
+</html>
+
