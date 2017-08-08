@@ -1,7 +1,7 @@
 # CMIS-440-Project-3
 #### Use a JSF web page to collect data and display the results on a response page.
 
-Asks the user to input a coffe order, using various JSF input tools. Ouputs results on a response page.
+Asks the user to input a coffee order, using various JSF input tools. Ouputs results on a response page.
 
 _Note: The "bookmarks-Orig" project was the project I was supplied that needed to be modified.  The result being the "bookmarks" project. A changelog is in "William Crutchfield - Project 3.pdf"._
 
